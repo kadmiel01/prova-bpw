@@ -1,0 +1,16 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<h1>Listagem De Usuarios </h1>
+    {% for pessoa in pessoals %}
+    <div class="post">
+        <h1><a href="{% url 'pessoal_detail' pk=pessoa.pk %}"> Nome : {{ pessoa.nome }}</a></h1>
+        <p> Sobrenome : {{ pessoa.sobrenome }}</p>
+        <p> Sexo : {{ pessoa.sexo }}</p>
+        <p> Cor :{{ pessoa.cor }}</p>
+        <p> Idade :{{ pessoa.idade }}</p>
+        <p> Data De Nascimento: {{ pessoa.datadenacimento }}</p>
+        <p> Endereco : {{ pessoa.endereco }}</p>
+
+    </div>
+    {% endfor %}
+{% endblock %}
